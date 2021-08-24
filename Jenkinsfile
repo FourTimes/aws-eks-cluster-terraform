@@ -7,7 +7,8 @@ pipeline {
         ECR_REPO = credentials('ECR_REPO')
         ECR_REPO_URL = credentials('ECR_REPO_URL')
         EKS_CLUTER_NAME = "tspring-staging"
-        IMAGE_NAME = "node${BUILD_ID}"
+        GIT_COMMIT_ID = sh(script: 'git rev-parse --short HEAD', returnStdout: true)
+        IMAGE_NAME = "api-${GIT_COMMIT_ID}"
 //         SONAR_PROJECT_NAME= "tspring-api"
 //         SONAR_PROJECT_LOGIN = credentials('tspring-api-login')
     }
