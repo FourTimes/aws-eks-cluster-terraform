@@ -10,7 +10,7 @@ jobs:
     name: terraform deployment
     runs-on: ubuntu-latest
     env:
-      bucket: terraform-backend-buckets
+      bucket: terraform-backend-buckets-tf
     steps:
       - name: checkout
         uses: actions/checkout@v1
